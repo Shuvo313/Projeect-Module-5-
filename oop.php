@@ -50,8 +50,6 @@ class Member {
     }
 }
 
-// -----------------------------
-// Dynamic Input via readline()
 
 echo "Enter details for 2 books:\n";
 $books = [];
@@ -70,7 +68,7 @@ for ($i = 1; $i <= 2; $i++) {
     $members[] = new Member($name);
 }
 
-// Each member borrows one book (1st member -> 1st book, 2nd -> 2nd)
+
 echo "\n---Borrowing Books---\n";
 $members[0]->borrowBook($books[0]);
 $members[1]->borrowBook($books[1]);
