@@ -3,12 +3,20 @@
 $strings = ["Hello", "World", "PHP", "Programming"];
 
 foreach ($strings as $str) {
-    // Count vowels
-    $vowelCount = preg_match_all('/[aeiou]/i', $str);
+    $vowelCount = 0;
+    $lowerStr = strtolower($str); // lowercase conversion
+
+    // Count vowels manually
+    for ($i = 0; $i < strlen($lowerStr); $i++) {
+        if (in_array($lowerStr[$i], ['a', 'e', 'i', 'o', 'u'])) {
+            $vowelCount++;
+        }
+    }
 
     // Reverse the string
-    $reverse = strrev($str);
+    $reversedStr = strrev($str);
 
-    // Print the result
-    echo "Original String: $str, Vowel Count: $vowelCount, Reversed String: $reverse\n";
+    // Output
+    echo "Original String: {$str}, Vowel Count: {$vowelCount}, Reversed String: {$reversedStr}\n";
 }
+?>
